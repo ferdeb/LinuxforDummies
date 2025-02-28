@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Este comando hay que configurarlo en nuevas instalaciones de git para que todos los repositorios se creen como main en vez de master.
+
+git config --global init.defaultBranch main
+
+Para cambiar el nombre de la rama actual
+
+git branch -m main
+
+Cambiar nombre del admin del repo
+
+git config --global user.name "Fernando"
+
+Cambiar email del admin del repo
+
+git config --global user.email "fernandoemiliolopez13@gmail.com"
+
+
+
+COMMITS
+
+git add .
+
+git status para saber si faltan o cuales estan
+
+git commit -m "Mensaje de commit"
+
+
+
+
+
+
+BRANCHING
+
+para ver todas las ramas creadas
+
+git branch 
+
+Para crear una rama
+
+git checkout -b nombreDeLaRama
+
+git switch nombreDeLaRama
+
+Aqui haces los cambios en switch y cuando ya no necesites cambiar:
+
+git merge nombreDeLaRama
+
+Borrar rama sin uso
+
+git branch -d nombreDeLaRama
+
+
+
+Git revert 
+
+Sirve para devolverte solo al commit anterior, este es util para uso personal, si hiciste un cambio y no funciono, lo ideal es devolverte solo un paso atras
+
+
+git revert HashDelCommit
+
+
+Git reset
+
+Sirve para devolverte a cualquier commit en el historial, y borrando todos los cambios hasta ese punto
+
+git reset --soft HashDelCommit: 
+
+Mueve HEAD al commit especificado, pero regresa los cambios al área de staging, es decir, elimina el commit en el historial, como si solo
+hubiesemos hecho add sin hacer commit, y a partir de ahi, podemos añadir nuevos cambios o volver a hacer commit con los mismos cambios
+
+Esto no borra cambios o archivos en el directorio de trabajo, solo en el historial de git
+
+
+git reset --mixed HashDelCommit: 
+(Por defecto) Mueve HEAD al commit especificado y deshace los cambios en el área de staging, es decir, como si nunca hubiesemos hecho
+add, ni commit
+
+
+Esto no borra cambios o archivos en el directorio de trabajo, solo en el historial de git
+
+
+git reset --hard HashDelCommit: 
+
+Mueve HEAD al commit especificado y descarta todos los cambios, tanto en el área de staging como en el directorio de trabajo
+
+Esto SI borra cambios y archivos en el directorio de trabajo, y en el historial de git
+
+
+
+Git tag
+
+Git tag nos sirve para añadir una marca al ultimo commit, esto es util para reconocer versiones o importantes cambios en el codigo
+
+ git tag -a v1.0 -m "Primera versión".
+
+ Y podemos usar el comando git show mas el nombre del tag, para ver informacion de la etiqueta
+
+ git show nombreDelTag
+
+ 
+ Git checkout
+
+ Este comando nos permite devolvernos a una rama anterior de manera temporal
+
+ git checkut HashDelCommit
+
+Al usar git checkout para un commit específico, el estado del proyecto cambiará a lo que estaba en ese commit, pero esto no borra archivos posteriores; 
+simplemente los oculta en tu directorio de trabajo si no se han comprometido. 
+
+
+
+Git merge
+
+Estando en la rama main, podemos fusionar las ramas de desarollo
+
+git merge nombreDeLaRama
+
+Si no hay conflictos de codigo, los cambios de la rama se anexan automaticamente a main
+
+Si existen conflictos entre las ramas, git automaticamente, nos indica en el archivo donde hay conflictos
+Debemos eliminar o cambiar las lineas en conflicto, guardar el archivo y finalmente hacer add y commit y asi se completa el merge
+
+Administrar Llaves SSH en GitHub
+
+
+
+    Genera una clave SSH:
+        Abre tu terminal.
+        Ejecuta: ssh-keygen -t ed25519 -C "tu_correo@example.com" y sigue las instrucciones para crear la clave.
+
+        Despues de que sea creada nos cambiamos al directorio .shh
+
+        cd .ssh
+
+    Inicia el agente SSH:
+        Ejecuta: eval "$(ssh-agent -s)".
+        Luego, agrega tu clave privada: ssh-add ~/.ssh/id_ed25519.
+
+    Copia la clave pública:
+        Usa cat ~/.ssh/id_ed25519.pub para visualizarla y cópiala.
+
+    Añade la clave a GitHub:
+        Ve a GitHub, en "Settings" > "SSH and GPG keys", y selecciona "New SSH key". Pega tu clave pública.
+
+    Prueba la conexión:
+        Ejecuta: ssh -T git@github.com. Deberías ver un mensaje de éxito.
+
+
+Git pull
+
+En las buenas practicas para llevar un repositorio colaborativo, es importante hacer primero un pull del repositorio para trabajar con los cambios mas recientes
+Y asi no tendremos problemas de sincronizacion en nuestro repositorio
+
+Esto se logra con:
+
+git pull
+
+
+Siempre y cuando estemos en el repositorio que tengamos en GitHub y con nuestras llaves SSH configuradas
+
+Git Push
+
+Ahora, ya que tenemos nuestros cambios listos, necesitamos enviarlos a nuestro repositorio en la nube
+
+La primera vez que subamos nuestros cambios a la nube debemos ejecutar forzosamente este comando
+
+git push -u origin main
+
+Posteriormente solo con hacer commit en local y ejecutar
+
+git push
+
+Sera suficiente
+
+
+
+Git Fetch
+
+Git fetch es un intermedio entre merge y pull
+
+Este comando nos permite descargar los cambios mas recientes, comprobarlos y decidir si los queremos mergear con nuestro repositorio local
+
+Esto lo logramos ejecutando:
+
+git fetch origin
+
+Podemos comprobar los cambios con git log main..origin/main
+
+Y si los queremos ejecutamos git merge origin/main
+
+Despues de esto no es necesario ejecutar git pull, aunque en un entorno de produccion real, usualmente ejecutaremos git pull
+
+
+
+
+Flujos de trabajo en GitHub
+
+
+
+Si vamos a trabajar de forma colaborativa lo mas recomendable, es iniciar nuestro trabajo haciendo una rama apartir de main, con los cambios mas recientes
+hacer commit en la rama de desarrolo, comprobar si no hay cambios nuevos, de ser este el motivo, actualizarla, realizar merge en local con nuestros cambios, y finalmente PR
+
+De tener trabajo realizado, podemos actualizar nuestra rama de desarrollo haciendo un git pull origin main, comprobando no tener conflictos, y al finalizar
+hacer PR con nuestros cambios finalmente
+
+Es recomendable hacer primero merge en nuestro repo local, para despues hacer las PR'saber
+</body>
+</html>
