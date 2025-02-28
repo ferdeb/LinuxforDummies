@@ -60,5 +60,32 @@ Dual boot no funciona
 
 https://www.dailymotion.com/video/x8qstyo FIX GRUB LOC OS
 
+
+<strong>Servicio Bluetooth</strong> <br>
+En algunas distros como Xubuntu tendremos el problema de que el servicio de Bluetooth no inicie <br>
+Y para solucionar esto tendremos que iniciarlo manualmente desde la Terminal. <br><br>
+
+
+Primero, inicia el servicio de Bluetooth
+<code>
+systemctl start bluetooth
+</code>
+
+<br><br>
+
+Segundo, comprueba el servicio de Bluetooth
+sudo systemctl status bluetooth.service
+
+<br><br>
+
+Opcional, Por si algun motivo deseas detener este servicio
+systemctl stop bluetooth. <br>
+Y recuerda hacer la comprobacion con el comando anterior
+</p>
+<strong>Libfuse2</strong>
+Las librerias FUSE nos permitiran ejecutar las App Images en el sistema Linux, estas solo han sido necesarias en Ubuntu 22.04 y 22.10 <br>
+<code>
+libfuse2: sudo apt-get install libfuse2
+</code>
 </body>
 </html>
