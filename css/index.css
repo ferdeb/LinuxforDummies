@@ -1,0 +1,55 @@
+h1 
+{
+  text-align: center;
+  font-size: 5rem;
+}
+
+nav
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav
+{
+  margin-top: 2rem;
+  list-style: none;
+  
+ 
+}
+
+.main-nav__item
+{
+  display: inline-block;
+
+
+    
+}
+
+.main-nav__item a
+{
+  padding: 2rem;
+  text-decoration: none;
+  font-size: 3rem;
+  color: #ffffff;
+
+
+}
+
+
+.main-nav__item a:hover 
+{ 
+  color: #EA510D;
+}
+
+.text
+{
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+ 
+  
+  padding-inline: .5rem;
+
+  line-height: 1.5;
+}

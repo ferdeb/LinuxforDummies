@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Instalacion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/instalacion.css" type="text/css">
+</head>
+
+<body>
+    <h1>Instalacion de distribuciones Linux</h1>
+
+    <h2>¿Deberia instalar Ubuntu o Debian?</h2>
+    <p>
+        Esta pagina web y sus tutoriales estan basada para funciona en distribuciones Debian y Ubuntu, ademas de sus sabores derivados
+        La mayoria de capturas de pantalla y comandos son de estos sistemas
+        Ubuntu se basa en Debian, asi que la mayoria de comandos de Debian funcionan en Ubuntu
+        Puede que al usarlos en distribuciones basadas en Debian o Ubuntu no funcionen
+    
+        ¿Porque Ubuntu?
+
+        Es la distribucion mas amigable con los usuarios nuevos, tanto con los avanzados, cualquiera puede usar Ubuntu
+    
+        ¿Porque Debian?
+        Es la distribucion Linux mas antigua y una de las mas estables
+    </p>
+
+    <details>
+        <summary>Instalación de Ubuntu Desktop</summary>
+        <div class="install-steps-ubuntu" id="install-steps-ubuntu"></div>
+    </details>
+   
+    <details>
+        <summary>Instalación de Ubuntu Server</summary>
+        <div class="install-steps-server" id="install-steps-server"></div>
+    </details>
+
+    <details>
+        <summary>Instalación de Debian</summary>
+        <div class="install-steps-debian" id="install-steps-debian"></div>
+    </details>
+
+    <h2>Linux Post-Install</h2>
+
+    <p>
+        Post-install se le llama al proceso donde empezamos a configurar nuestra distribucion, empezamos a instalar software, a traves de la terminal
+        Algunos de estos softwares, solo se configuraran una sola vez
+
+        Debian suele tener un post-install algo mas complejo, donde ademas de usar la terminal, deberemos configurar archivos del sistema
+
+        En la guia cuando aparezca el emoji de 🖥️, significa que esos comandos tambien deben ser ejecutados en Ubuntu Server
+    </p>
+
+    <details>
+        <summary>Ubuntu y Debian</summary>
+
+        <p>Primero, debemos actualizar los repositorios y el sistema operativo para comprobar que APT este funcionando </p>
+           
+  
+        <img src="assets/instalacion/update.png" alt="Terminal mostrando el comando Update">
+        <p>Actualizar repositorios: sudo apt-get update 🖥️</p>
+ 
+        <img src="assets/instalacion/upgrade.png" alt="Terminal mostrando el comando Upgrade">   
+        <p>Actualizar el sistema: sudo apt-get upgrade 🖥️</p>
+
+        <p>En el caso especifico de Debian, despues de este paso hay que seguir los pasos de solo debian, antes de instalar cualquier software, y regresar aqui</p>
+
+        <h3>Gestor de energía</h3>
+        <ol>
+            <li>Instalar TLP y complementos ejecutando:
+                <img src="/" alt="tlp">
+                <pre><code>sudo apt install tlp tlp-rdw</code></pre>
+            </li>
+            <li>Iniciar TLP con el siguiente comando:
+                <img src="/" alt="tlp">
+                <pre><code>sudo tlp start</code></pre>
+            </li>
+        </ol>
+        
+
+
+
+      
+
+        Codecs multimedia
+
+        sudo apt-get install libavcodec-extra
+
+        Drivers para telefonos Android y iPhone
+
+        sudo apt-get install mtp-tools ipheth-utils ideviceinstaller ifuse
+    </details>
+
+    <details>
+        <summary>Solo Debian</summary>
+
+        https://fostips.com/change-system-language-debian-12/?amp=1 cambio de lenguaje
+
+        Como añadir sudoers
+
+        Activar repos non free
+        
+
+
+    </details>
+
+    <details>
+        <summary>Solo Ubuntu</summary>
+
+        Repositorios multiverse 
+
+        sudo add-apt-repository universe 🖥️
+        sudo add-apt-repository multiverse 🖥️
+        sudo add-apt-repository restricted 🖥️
+        sudo apt-get install ubuntu-restricted-extras
+
+
+        
+        Al finalizar hacemos un apt update y upgrade
+
+        Opcional
+
+        Activar el repositorio de los socios de canonical
+        Reconocer particiones del disco Duros
+
+        sudo apt-get install exfat-fuse exfat-utils hfsplus hfsutils ntfs-3g
+
+
+        Monitorizar temperaturas
+
+        sudo apt-get install lm-sensors hddtemp
+    </details>
+    <script src="imgloop.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/soluciones.css" type="text/css">
+</head>
+<body>
+
+
+<details>
+  <summary>Solución a incompatibilidad con paquetes i386 (Arquitectura x86) para instalar Visual Studio Code</summary>
+  <p>Para solucionar el error en cualquier línea de repositorio que nos indique:</p>
+  <ul>
+    <li>No es compatible con <code>main/binary-i386/Packages</code>.</li>
+    <li>No admite la arquitectura <code>i386</code>.</li>
+  </ul>
+  <p>Debemos agregar después de la palabra deb en la línea arch=amd64 Ejemplo de línea corregida:</p>
+  <code>deb [arch=amd64] https://packages.microsoft.com/repos/code stable main</code>
+</details>
+
+      
+
+<details>
+  <summary>Solucion a los touchpad antiguos (Laptop MX)</summary>
+
+  <p> Activar TouchPad Synaptic</p>
+  
+  <p>En la terminal ejecutemos los siguientes comandos:</p>
+
+  <code>modprobe -r psmouse</code>
+  
+  <code> modprobe psmouse proto=imps</code>
+
+  <p>Para hacer este cambio permanente, creemos un archivo llamado touchpad.conf en la ruta /etc/modprobe.d/
+
+    Usando vim o nano, cual sea nuestro editor favorito de terminal
+
+    sudo vim touchpad.conf /etc/modprobe.d/
+
+    sudo nano touchpad.conf /etc/modprobe.d/
+
+    
+    y escribimos la siguiente linea de codigo</p>
+
+   <code> options psmouse proto=imps</code>
+
+</details>
+
+Dual boot no funciona
+
+https://www.dailymotion.com/video/x8qstyo FIX GRUB LOC OS
+
+</body>
+</html>

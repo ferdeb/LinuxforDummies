@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/terminal.css" type="text/css">
+</head>
+<body>
+    
+<p>Comandos de disco duro</p>
+
+
+Ver el espacio de particiones
+
+df -Th
+
+Ver todos los dispositivos de almacenamiento
+
+lsblk 
+
+Añadimos la flag -f para ver espacio usado y disponible en los dispositivos
+
+
+Comprobar la cantidad de ram disponible
+
+free -h 
+
+
+<p>
+Comando superls
+
+ls -lavh
+
+Este comando ls avanzado, nos muestra mas informacion usando las flags
+
+-l hace que nos muestre un listado con detalles de archivos, como los Permisos Cantidad de enlaces Propietario, grupo Tamaño Fecha de modificación Nombre del archivo o directorio
+
+-a Nos muestra todos los archivos y directorios, ocultos o no
+
+-v Nos muestra los archivos en orden logico o natural
+
+-h En formato entendible para humanos
+
+
+
+drwxr-xr-x  5 fernando fernando 4.0K dic 31 17:38  .
+drwx------ 23 fernando fernando 4.0K ene  6 19:11  ..
+-rw-r--r--  1 fernando fernando 302M dic 31 17:38 'Backup Code 31-12-24.zip'
+-rw-r--r--  1 fernando fernando  927 ago 31 23:20 'Curso de compresion lectora.txt'
+-rw-r--r--  1 fernando fernando  21M dic 12 18:22 'Introduccion al mundo Linux.odp'
+-rw-r--r--  1 fernando fernando  14K sep 23 00:17  Linax.odp
+drwxr-xr-x  3 fernando fernando 4.0K ene  6 19:10  PrimerProyecto
+drwxrwxrwx  6 fernando fernando 4.0K dic 15 21:06  Programacion
+drwxrwxrwx  5 fernando fernando 4.0K nov  2 23:17  Proyectos
+-rw-r--r--  1 fernando fernando 1.4M dic 20 18:13 '¿Porque deberias empezar en el mundo Linux?.odp'
+-rw-r--r--  1 fernando fernando 409K dic 20 15:00 '¿Porque deberias empezar en el mundo Linux?.pdf'
+-rw-r--r--  1 fernando fernando  17K dic 13 18:59 '¿Porque deberias empezar en el mundo Linux? - Script.odt'
+-rw-r--r--  1 fernando fernando  32K dic 20 18:52 '¿Porque deberias iniciar en el mundo Linux? - Script Barcamp.odt'
+
+
+La primera letra, leeyendose de izquierda a derecha, nos indica el tipo de archivo
+
+Si la letra es una d, hablamos de un directorio
+
+Si la letra es una l, es un enlace o link
+
+Si es un -, es un archivo regular, un txt un html etc
+</p>
+
+
+
+
+
+
+
+
+<p>
+Procesos
+
+Para ver los procesos activos en la terminal que estamos ejecutando, usamos:
+
+ps
+
+
+
+Para ver todos los procesos activos en el sistema, usamos:
+
+ps -aux
+   
+Para buscar una palabra clave en los procesos, en este caso root, usamos:
+    
+ps -aux | grep root
+    
+   
+Para buscar el process id de un proceso, ejemplo less
+pidof less
+    
+Para mostrar una lista de archivos abiertos por procesos en ejecución.
+
+lsof
+    
+Para solo lista procesos que usan la red, usamos:
+    
+lsof -i
+    
+Lista los procesos en red, con el puerto 22, o el puerto que queramos especificar
+
+este debe ser ejecutado en con permisos de super usuario y nos permite saber que usuarios tienen conexiones encendidas en ssh
+Si detectamos un usuario desconocido, o que no sea root, podria ser algun intruso en nuestro sistema
+
+    
+sudo lsof -i :22
+    
+</p>
+
+
+
+
+
+</body>
+</html>
