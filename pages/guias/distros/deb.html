@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
 
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="stylesheet" href="css/deb.css" type="text/css">
@@ -46,18 +46,48 @@
 
     <h2>Cambiar idioma</h2>
     <p>
-        
-
         Al instalarse Debian, suele no instalarse el idioma si no es ingles
 
         <a href="https://fostips.com/change-system-language-debian-12/?amp=1 ">Consulta esta guia, para modificar el idioma</a>
     </p>
+
+    <h2>Añadir usuarios sudo (sudoers)</h2>
+    <p>
+        Al instalar Debian, debemos configurar y establecer dos configuraciones, el usuario personal y el superusuario
+
+        En Debian no esta activado por defecto el modo sudo, es decir los permisos de administrador o super usuario, a traves de nuestro usuario personal
+
+        Debemos entrar al modo root o super usuario, y realizar unas configuraciones
+
+        Aunque suene confuso, hacer todas nuestras actividades en directamente en modo super usuario es muy peligroso, 
+        si nuestro sistema se ve comprometido, el atacante se encontrara directamente con los permisos totales del sistema
+
+        Por eso debemos configurar que nuestro usuario personal, pueda acceder a estos permisos mediante la contraseña de superusuario que ya establecimos
+
+        Y asi siempre nuestro sistema tendra pocos privilegios, lo cual lo hace mas seguro
+    </p>
+
+    <img src="/assets/distros/sudoers/sudoers1.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers2.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers3.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers4.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers5.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers6.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/sudoers/sudoers7.png" alt="Terminal en Debian mostrando el comando Update">
 
     <h2>Activar repositorios non-free</h2>
     <p>
         Debian tiene una seria politica con el software que no es libre, para esto debemos activar los repositorios de 
         software "non-free" o software no libre
     </p>
+    <img src="/assets/distros/nonfree/nonfree1.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree2.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree3.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree4.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree5.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree6.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree7.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/nonfree/nonfree8.png" alt="Terminal en Debian mostrando el comando Update">
 
 
     <h2>Actualizar repositorios y actualizar paquetes</h2>
@@ -84,15 +114,33 @@
     <img src="/assets/distros/updupg/upg3.png" alt="Terminal en Debian mostrando el comando Upgrade">
     <img src="/assets/distros/updupg/upg4.png" alt="Terminal en Debian mostrando el comando Upgrade">
 
-    <h2>Gestor de energía</h2>
+    <h2>Thinkpad Laptop Power (Gestor de energia)</h2>
+
+    <p>
+        Thinkpad Laptop Power, es una utilidad muy util cuando un dispositivo en Linux usa baterias, TLP es una utilidad que nos ayuda a administrar
+        el consumo de energia.
+   </p>
+
     <ol>
-        <li>Instalar TLP y complementos ejecutando:
-            <img src="/" alt="tlp">
-            <pre><code>sudo apt install tlp tlp-rdw</code></pre>
+        <li>Instalamos TLP y complementos ejecutando:
+            <img src="/assets/distros/tlp/tlp1.png" alt="tlp" class="tlp">
+            <p>sudo apt install tlp tlp-rdw</p>
         </li>
-        <li>Iniciar TLP con el siguiente comando:
-            <img src="/" alt="tlp">
-            <pre><code>sudo tlp start</code></pre>
+        <li>Aceptamos la instalacion de TLP:
+            <img src="/assets/distros/tlp/tlp2.png" alt="tlp" class="tlp">
+            <p>sudo tlp start</p>
+        </li>
+        <li>Sabremos si TLP se instalo correctamente si la terminal regresa a ingresar mas comandos:
+            <img src="/assets/distros/tlp/tlp3.png" alt="tlp" class="tlp">
+            <p>sudo tlp start</p>
+        </li>
+        <li>Iniciamos TLP con el siguiente comando:
+            <img src="/assets/distros/tlp/tlp4.png" alt="tlp" class="tlp">
+            <p>sudo tlp start</p>
+        </li>
+        <li>Si obtenemos esta respuesta sabremos que TLP se esta ejecutando correctamente:
+            <img src="/assets/distros/tlp/tlp5.png" alt="tlp" class="tlp">
+            <p>sudo tlp start</p>
         </li>
     </ol>
 
