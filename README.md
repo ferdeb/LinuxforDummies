@@ -1,2 +1,3 @@
-# LinuxforDummies
--Linux for Dummies Website
+# Linux for Dummies
+
+Linux for Dummies Website

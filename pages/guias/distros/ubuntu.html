@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ubuntu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/ubuntu.css" type="text/css">
+</head>
+
+<body>
+    <summary>Instalación de Ubuntu Desktop</summary>
+    <div class="install-steps-ubuntu" id="install-steps-ubuntu"></div>
+
+    <h2>Post-Install</h2>
+
+    <p>
+        Post-install se le llama al proceso donde empezamos a configurar nuestra distribucion, empezamos a instalar
+        software, a traves de la terminal
+        Algunos de estos softwares, solo se configuraran una sola vez
+
+        Estos comandos deben ser ejecutados en Ubuntu, y han sido probados hasta Ubuntu 24.04
+    </p>
+
+    <p>
+        Este proceso es mediante la terminal, asi que abrimos una terminal
+        Y escribimos el comando necesario para actualizar los repositorios el cual es: 
+        sudo apt-get update
+    </p>
+    <img src="/assets/distros/updupg/upd.png" alt="Terminal en Ubuntu mostrando el comando Update">
+
+    <p>
+        Ahora actualizamos los paquetes con el comando:
+        sudo apt-get update
+    </p>
+    <img src="/assets/distros/updupg/upg.png" alt="Terminal en Ubuntu mostrando el comando Upgrade">
+
+    <h2>Gestor de energía</h2>
+
+    <p>
+        Thinkad Laptop Power, es una utilidad muy util cuando un dispositivo en Linux usa baterias, TLP es una utilidad que nos ayuda a administrar
+        el consumo de energia.
+   </p>
+   <img src="/assets/distros/tlp/tlp.png" alt="tlp">
+   <p>TLP corriendo en Ubuntu</p>
+
+
+    <ol>
+        <li>Instalar TLP y complementos ejecutando:
+            <img src="/assets/distros/tlp/tlp1.png" alt="tlp">
+            <pre><code>sudo apt install tlp tlp-rdw</code></pre>
+        </li>
+        <li>Iniciar TLP con el siguiente comando:
+            <img src="/assets/distros/tlp/tlp2.png" alt="tlp">
+            <pre><code>sudo tlp start</code></pre>
+        </li>
+        <li>Iniciar TLP con el siguiente comando:
+            <img src="/assets/distros/tlp/tlp3.png" alt="tlp">
+            <pre><code>sudo tlp start</code></pre>
+        </li>
+        <li>Iniciar TLP con el siguiente comando:
+            <img src="/assets/distros/tlp/tlp4.png" alt="tlp">
+            <pre><code>sudo tlp start</code></pre>
+        </li>
+        <li>Iniciar TLP con el siguiente comando:
+            <img src="/assets/distros/tlp/tlp5.png" alt="tlp">
+            <pre><code>sudo tlp start</code></pre>
+        </li>
+    </ol>
+
+    Activar repositorios multiverse
+
+    sudo add-apt-repository universe
+    sudo add-apt-repository multiverse
+    sudo add-apt-repository restricted
+    sudo apt-get install ubuntu-restricted-extras
+
+    Al finalizar hacemos un apt update y upgrade
+
+    Opcional
+
+    Activar el repositorio de los socios de canonical
+
+    Reconocer particiones del disco Duros
+
+    sudo apt-get install exfat-fuse exfat-utils hfsplus hfsutils ntfs-3g
+
+
+    Monitorizar temperaturas
+
+    sudo apt-get install lm-sensors hddtemp
+
+    Codecs multimedia
+
+    sudo apt-get install libavcodec-extra
+
+    Drivers para telefonos Android y iPhone
+
+    sudo apt-get install mtp-tools ipheth-utils ideviceinstaller ifuse
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Debian</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon.ico" sizes="16x16 24x24 36x36 48x48">
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/deb.css" type="text/css">
+</head>
+
+<body>
+    <h1>Debian 12</h1>
+
+    <details>
+        <summary>Instalación de Debian</summary>
+        <div class="install-steps-debian" id="install-steps-debian"></div>
+    </details>
+
+
+    <h2>Post-Install</h2>
+
+    <p>
+        Post-install se le llama al proceso donde empezamos a configurar nuestra distribucion, empezamos a instalar
+        software, a traves de la terminal.
+
+        Algunos de estos softwares, solo se configuraran una sola vez.
+
+        Estos comandos deben ser ejecutados en Debian, y han sido probados hasta Debian 12.
+
+        Debian suele tener un post-install algo mas complejo, donde ademas de usar la terminal, deberemos configurar
+        archivos del sistema.
+    </p>
+
+
+    <h2>Cambiar idioma</h2>
+    <p>
+        
+
+        Al instalarse Debian, suele no instalarse el idioma si no es ingles
+
+        <a href="https://fostips.com/change-system-language-debian-12/?amp=1 ">Consulta esta guia, para modificar el idioma</a>
+    </p>
+
+    <h2>Activar repositorios non-free</h2>
+    <p>
+        Debian tiene una seria politica con el software que no es libre, para esto debemos activar los repositorios de 
+        software "non-free" o software no libre
+    </p>
+
+
+    <h2>Actualizar repositorios y actualizar paquetes</h2>
+    <p>
+        Debemos actualizar los repositorios y el sistema operativo para comprobar que APT este funcionando, ademas que cualquiera
+        otro software necesario se instalara teniendo los repositorios non-free activos.
+    </p>
+
+    <p>
+        Este proceso es mediante la terminal, asi que abrimos una terminal
+        Y escribimos el comando necesario para actualizar los repositorios el cual es: 
+        sudo apt-get update
+    </p>
+    <img src="/assets/distros/updupg/upd1.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/updupg/upd2.png" alt="Terminal en Debian mostrando el comando Update">
+    <img src="/assets/distros/updupg/upd3.png" alt="Terminal en Debian mostrando el comando Update">
+
+    <p>
+        Ahora actualizamos los paquetes con el comando:
+        sudo apt-get update
+    </p>
+    <img src="/assets/distros/updupg/upg1.png" alt="Terminal en Debian mostrando el comando Upgrade">
+    <img src="/assets/distros/updupg/upg2.png" alt="Terminal en Debian mostrando el comando Upgrade">
+    <img src="/assets/distros/updupg/upg3.png" alt="Terminal en Debian mostrando el comando Upgrade">
+    <img src="/assets/distros/updupg/upg4.png" alt="Terminal en Debian mostrando el comando Upgrade">
+
+    <h2>Gestor de energía</h2>
+    <ol>
+        <li>Instalar TLP y complementos ejecutando:
+            <img src="/" alt="tlp">
+            <pre><code>sudo apt install tlp tlp-rdw</code></pre>
+        </li>
+        <li>Iniciar TLP con el siguiente comando:
+            <img src="/" alt="tlp">
+            <pre><code>sudo tlp start</code></pre>
+        </li>
+    </ol>
+
+    <script src="/js/imgloop copy.js"></script>
+</body>
+
+</html>
