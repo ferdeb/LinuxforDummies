@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -34,41 +34,33 @@
 
     <details>
         <summary>Apache</summary>
+
+        <h2>Instalacion de Apache</h2>
         <p>Iniciamos actualizando los repositorios e instalando actualizaciones</p>
         <code>sudo apt update && sudo apt upgrade -y</code>
-
         <p>Instalamos el servidor apache</p>
         <code>sudo apt install apache2</code>
-
-  
         <p>Comprobamos la correcta instalacion de apache, comprobando que el servicio este corriendo</p>
         <code>sudo systemctl status apache2</code>
 
+        <h2>Instalacion de dependencias</h2>
         <p>Se recomienda haber instalado PHP antes desde los repositorios oficiales de Debian, pero si no este comando instalara php8.2 y todo lo necesario para trabajar con apache</p>
         <code>sudo apt install php php-cli php-common php-mysql libapache2-mod-php php-xml php-mbstring</code>
-
         <p>Verificamos que PHP este instalado con este comando, deberías ver algo similar a "PHP 8.2.x".</p>
         <code>php -v</code>
 
+        <h2>Comprobacion de la instalacion</h2>
 
         <p>Generalmente, la instalación de libapache2-mod-php habilita automáticamente el procesamiento de archivos PHP en Apache. Para probarlo, crea un archivo de información:</p>
         <code>sudo nano /var/www/html/info.php</code>
-
-
         <p>Agrega el siguiente script al archivo, que es una prueba para ver las caracteristicas del entorno de PHP instalado</p>
         <code>sudo nano /var/www/html/info.php</code>
-
-
         <p>Una vez guardado el archivo, renicia el servicio de apache</p>
         <code>sudo systemctl restart apache2</code>
-
-        <p>Puedes verificar que el servidor funciona ingresando a: 
-            http://localhost
-
-            Y que esta funcionando PHP y sus archivos con:
-            http://localhost/info.php
-        </p>
-
+        <p>Puedes verificar que el servidor funciona ingresando a:</p>
+        <a href="http://localhost">http://localhost</a>
+        <p>Y que esta funcionando PHP y sus archivos con:</p>
+        <a href="http://localhost/info.php">http://localhost/info.php</a>
     </details>
 
     <h2>Gestores de bases de datos</h2>
@@ -82,7 +74,7 @@
 
 
     <details>
-        <summary>Instalar MariaDB (Reemplazo Open Source de MySQL)</summary>
+        <summary>MariaDB (Reemplazo Open Source de MySQL)</summary>
 
         <h2>Instalacion mediante Terminal</h2>
         
@@ -123,6 +115,7 @@
         <p>Despues de hacer esto, solo podremos accesar mediante permisos de sudo a mariadb, lo cual es util para un entorno de practicas, pero no lo mas idoneo para un entorno de produccion o servidor</p>
         
         <h2>Eliminacion del metodo de autenticacion unix_socket</h2>
+
         <p>Iniciamos mariadb con permisos de super usuario</p>
         <code>sudo mariadb</code>
         <p>Ya en la consola de MariaDB ejecutamos la siguiente sentencia SQL</p>
@@ -134,8 +127,6 @@
         <p>Esto es útil cuando realizas cambios manuales en las tablas de usuarios y permisos y quieres que esos cambios se apliquen de inmediato, sin necesidad de reiniciar el servidor.</p>
         <p>Finalmente accedemos a MariaDB con nuestro usuario y contraseña nativo con el comando:</p>
         <code>mysql -u root -p</code>
-
-
     </details>
 
     <details>

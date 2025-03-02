@@ -7,7 +7,7 @@ h1
 nav
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .main-nav
@@ -21,9 +21,6 @@ nav
 .main-nav__item
 {
   display: inline-block;
-
-
-    
 }
 
 .main-nav__item a
@@ -45,11 +42,11 @@ nav
 .text
 {
   font-size: 2rem;
-
   margin-bottom: 1rem;
- 
-  
   padding-inline: .5rem;
 
+  margin-left: 25%;
+  margin-right: 25%;
   line-height: 1.5;
+  text-align:start;
 }
